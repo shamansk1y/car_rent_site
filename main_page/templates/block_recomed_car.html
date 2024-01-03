@@ -1,0 +1,19 @@
+{% load static %}
+
+{% for car in recomend_car %}
+
+    <div class="col-md-4">
+        <div class="car-wrap rounded ftco-animate">
+            <div class="img rounded d-flex align-items-end" style="background-image: url('{{ car.image.url }}');">
+            </div>
+            <div class="text">
+                <h2 class="mb-0"><a href="{{ car.get_absolute_url }}">{{ car.title }} {{ car.data }}</a></h2>
+                <div class="d-flex mb-3">
+                    <span class="cat">{{ car.manufacturer }}</span>
+                    <p class="price ml-auto">${{ car.price }} <span>/day</span></p>
+                </div>
+                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Book now</a> <a href="{{ car.get_absolute_url }}" class="btn btn-secondary py-2 ml-1">Details</a></p>
+            </div>
+        </div>
+    </div>
+{% endfor %}

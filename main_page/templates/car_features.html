@@ -1,0 +1,111 @@
+<div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="features">
+
+                {% if car.airconditions %}
+                    <li class="check"><span class="ion-ios-checkmark"></span>Airconditions</li>
+                {% else %}
+                    <li class="remove"><span class="ion-ios-close"></span>Airconditions</li>
+                {% endif %}
+
+                {% if car.child %}
+                    <li class="check"><span class="ion-ios-checkmark"></span>Child Seat</li>
+                {% else %}
+                    <li class="remove"><span class="ion-ios-close"></span>Child Seat</li>
+                {% endif %}
+
+                {% if car.gps %}
+                    <li class="check"><span class="ion-ios-checkmark"></span>GPS</li>
+                {% else %}
+                    <li class="remove"><span class="ion-ios-close"></span>GPS</li>
+                {% endif %}
+
+                {% if car.luggage_f %}
+                    <li class="check"><span class="ion-ios-checkmark"></span>Luggage</li>
+                {% else %}
+                    <li class="remove"><span class="ion-ios-close"></span>Luggage</li>
+                {% endif %}
+
+                {% if car.music %}
+                    <li class="check"><span class="ion-ios-checkmark"></span>Music</li>
+                {% else %}
+                    <li class="remove"><span class="ion-ios-close"></span>Music</li>
+                {% endif %}
+
+
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <ul class="features">
+
+                {% if car.seat_belt %}
+                    <li class="check"><span class="ion-ios-checkmark"></span>Seat Belt</li>
+                {% else %}
+                    <li class="remove"><span class="ion-ios-close"></span>Seat Belt</li>
+                {% endif %}
+
+                {% if car.sleeping_bed %}
+                    <li class="check"><span class="ion-ios-checkmark"></span>Sleeping Bed</li>
+                {% else %}
+                    <li class="remove"><span class="ion-ios-close"></span>Sleeping Bed</li>
+                {% endif %}
+
+                {% if car.water %}
+                    <li class="check"><span class="ion-ios-checkmark"></span>Water</li>
+                {% else %}
+                    <li class="remove"><span class="ion-ios-close"></span>Water</li>
+                {% endif %}
+
+                {% if car.bluetooth %}
+                    <li class="check"><span class="ion-ios-checkmark"></span>Bluetooth</li>
+                {% else %}
+                    <li class="remove"><span class="ion-ios-close"></span>Bluetooth</li>
+                {% endif %}
+
+                {% if car.onboard_computer %}
+                    <li class="check"><span class="ion-ios-checkmark"></span>Onboard computer</li>
+                {% else %}
+                    <li class="remove"><span class="ion-ios-close"></span>Onboard computer</li>
+                {% endif %}
+
+
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <ul class="features">
+
+                {% if car.audio %}
+                    <li class="check"><span class="ion-ios-checkmark"></span>Audio input</li>
+                {% else %}
+                    <li class="remove"><span class="ion-ios-close"></span>Audio input</li>
+                {% endif %}
+
+                {% if car.long_term_trips %}
+                    <li class="check"><span class="ion-ios-checkmark"></span>Long Term Trips</li>
+                {% else %}
+                    <li class="remove"><span class="ion-ios-close"></span>Long Term Trips</li>
+                {% endif %}
+
+                {% if car.car_kit %}
+                    <li class="check"><span class="ion-ios-checkmark"></span>Car Kit</li>
+                {% else %}
+                    <li class="remove"><span class="ion-ios-close"></span>Car Kit</li>
+                {% endif %}
+
+                {% if car.remote_central_locking %}
+                    <li class="check"><span class="ion-ios-checkmark"></span>Remote central locking</li>
+                {% else %}
+                    <li class="remove"><span class="ion-ios-close"></span>Remote central locking</li>
+                {% endif %}
+
+                {% if car.climate_control %}
+                    <li class="check"><span class="ion-ios-checkmark"></span>Climate control</li>
+                {% else %}
+                    <li class="remove"><span class="ion-ios-close"></span>Climate control</li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{% static "images/bg_3.jpg" %}');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+                <div class="col-md-9 ftco-animate pb-5">
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'main_page:index' %}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Cars <i class="ion-ios-arrow-forward"></i></span></p>
+                    <h1 class="mb-3 bread">Choose Your Car</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+		<section class="ftco-section bg-light">
+    	<div class="container">
+    		<div class="row">
+                {% for car in page_obj %}
+                    <div class="col-md-4">
+                        <div class="car-wrap rounded ftco-animate">
+                            <div class="img rounded d-flex align-items-end" style="background-image: url('{{ car.image.url }}');">
+                            </div>
+                            <div class="text">
+                                <h2 class="mb-0"><a href="{{ car.get_absolute_url }}">{{ car.title }} {{ car.data }}</a></h2>
+                                <div class="d-flex mb-3">
+                                    <span class="cat">{{ car.manufacturer }}</span>
+                                    <p class="price ml-auto">${{ car.price }} <span>/day</span></p>
+                                </div>
+                                <p class="d-flex mb-0 d-block"><a href="{% url 'main_page:index' %}" class="btn btn-primary py-2 mr-1">Book now</a> <a href="{{ car.get_absolute_url }}" class="btn btn-secondary py-2 ml-1">Details</a></p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+    		</div>
+
+    		<div class="row mt-5">
+                <div class="col text-center">
+
+        <div class="col-12">
+            <nav aria-label="...">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <li class="page-item active"><a class="page-link" href="#">{{ num }}</a></li>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                        <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                    {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+            </nav>
+        </div>
+
+                </div>
+            </div>
+
+
+    	</div>
+    </section>
+
+
+{% endblock %}
